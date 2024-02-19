@@ -47,4 +47,9 @@ bootloader.bin: bootloader.o
 clean:
 	-rm -f *.o *.bin $(TARGET)
 
-.PHONY: all clean
+RELFILE := WindrvXMboot-$(shell git describe)
+
+release: all
+	zip -r $(RELFILE).zip README.txt $(TARGET)
+
+.PHONY: all clean release
