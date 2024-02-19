@@ -39,4 +39,5 @@ XM6 TypeGがホストファイルシステムから起動できるようにな�
 
 * 起動に使用する Human68k (version 3.02) は `WindrvXMboot.HDS` イメージ内に含まれています。
 * WindrvXM は version 0.27 をベースに SCSI HDD 組み込み可能な形に修正を行っています。
+  * 詳細は[SCSI HDD 埋め込みドライバについて](SCSIHDDdrv.md)を参照してください。
 * 動作確認は XM6 TypeG version 3.36 を用いています。SCSI ディスクイメージからの起動と Windrv が使えるものであれば、他のエミュレータでも利用可能なはずです。
