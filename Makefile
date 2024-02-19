@@ -31,7 +31,12 @@ OBJCOPY = $(CROSS)objcopy
 
 ASFLAGS = -m68000
 
-all: bootloader.bin
+TARGET = WindrvXMboot.HDS
+
+all: $(TARGET)
+
+$(TARGET): bootloader.bin WindrvXM/WindrvXM.sys HUMAN.SYS
+	./createhds.py $@
 
 bootloader.bin: bootloader.o
 	$(OBJCOPY) -O binary $< $@
@@ -40,6 +45,6 @@ bootloader.bin: bootloader.o
 	$(AS) $(ASFLAGS) -c -o $@ $<
 
 clean:
-	-rm -f *.o *.bin
+	-rm -f *.o *.bin $(TARGET)
 
 .PHONY: all clean
